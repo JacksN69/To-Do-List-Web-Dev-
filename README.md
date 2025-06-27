@@ -44,24 +44,6 @@ yaml
 Copier
 Modifier
 
-
-
----
-
-## 📦 Installation
-
-```bash
-# 1. Cloner le dépôt
-git clone https://github.com/ton-utilisateur/todo-list-app.git
-cd todo-list-app
-
-# 2. Installer les dépendances
-npm install
-
-# 3. Lancer l'application
-npm start
-
-
 Technologies utilisées
 React
 
@@ -78,3 +60,21 @@ perl
 Copier
 Modifier
 my-todo-list
+
+---
+
+## 📦 Installation
+
+
+```bash
+# 1. Cloner le dépôt
+git clone https://github.com/ton-utilisateur/todo-list-app.git
+cd todo-list-app
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Lancer l'application
+npm start
+
+---
