@@ -1,0 +1,39 @@
+import React, { useState } from 'react';
+
+const TaskItem = ({ task, onEdit, onDelete }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedLabel, setEditedLabel] = useState(task.label);
+
+  const handleSave = () => {
+    if (editedLabel.trim()) {
+      onEdit(task.id, editedLabel.trim());
+      setIsEditing(false);
+    }
+  };
+
+  return (
+    <li className="list-group-item d-flex justify-content-between align-items-center">
+      {isEditing ? (
+        <input
+          type="text"
+          className="form-control me-2"
+          value={editedLabel}
+          onChange={(e) => setEditedLabel(e.target.value)}
+        />
+      ) : (
+        <span>{task.label}</span>
+      )}
+
+      <div className="btn-group btn-group-sm">
+        {isEditing ? (
+          <button className="btn btn-success" onClick={handleSave}>Valider</button>
+        ) : (
+          <button className="btn btn-outline-secondary" onClick={() => setIsEditing(true)}>Modifier</button>
+        )}
+        <button className="btn btn-outline-danger" onClick={() => onDelete(task.id)}>Supprimer</button>
+      </div>
+    </li>
+  );
+};
+
+export default TaskItem;

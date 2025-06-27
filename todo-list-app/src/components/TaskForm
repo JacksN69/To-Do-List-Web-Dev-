@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+
+const TaskForm = ({ onAdd }) => {
+  const [task, setTask] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (task.trim()) {
+      onAdd(task.trim());
+      setTask('');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="d-flex mb-3">
+      <input
+        type="text"
+        className="form-control me-2"
+        placeholder="Ajouter une tâche..."
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button type="submit" className="btn btn-primary">Ajouter</button>
+    </form>
+  );
+};
+
+export default TaskForm;
